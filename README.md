@@ -1,4 +1,4 @@
 getpass
 =======
 
-A utility that securely receives password on STDIN.
+A utility that securely receives password on STDIN without echo.
