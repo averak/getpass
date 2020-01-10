@@ -23,3 +23,9 @@ getpass(sub_char:"+") # => [ID, PW]
 # id：testID
 # password：++++++++++++
 ```
+
+## Installation
+```sh
+$ git clone https://github.com/AjxLab/getpass
+$ cd getpass
+```

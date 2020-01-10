@@ -1,16 +1,16 @@
 # -*- coding:utf-8 -*-
 require 'io/console'
 
-def getpass(prompt:["id", "password"], is_display:[true, false], sub_char:"*")
+def getpass(prompt:["id", "password"], is_echo:[true, false], sub_char:"*")
   ## -----*----- 安全なパスワード入力 -----*----- ##
-  raise ArgumentError unless prompt.length == is_display.length
+  raise ArgumentError unless prompt.length == is_echo.length
   ret = Array.new(prompt.length)
 
   prompt.length.times do |i|
     print "#{prompt[i]}："
     ret[i] = ''
 
-    if is_display[i]
+    if is_echo[i]
       # エコーバック有り
       ret[i] = gets.strip
 
