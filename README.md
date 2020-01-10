@@ -5,13 +5,20 @@ A utility that securely receives password on STDIN without echo.
 
 
 ## Usage
+### Description of Arguments
+name     | Description
+---------|----------------------------------------------------------------------------------
+prompt   | Prompt to display. Default value is ["id", "password"].
+is_echo  | Whether to display the entered string. Default value is [true, false].
+sub_char | Character to be displayed instead of the entered character. Default value is "*".
+
 ### Simple Example
 ```ruby
 getpass # => [ID, PW]
 # id：testID
 # password：************
 
-getpass(is_display:[true, true]) # => [ID, PW]
+getpass(is_echo:[true, true]) # => [ID, PW]
 # id：testID
 # password：testpassword
 
