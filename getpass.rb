@@ -1,7 +1,8 @@
 # -*- coding:utf-8 -*-
 require 'io/console'
 
-def getpass(prompt:["id", "password"], is_echo:[true, false], sub_char:"*")
+def getpass(prompt:["id", "password"], is_echo:[true, false],
+            sub_char:"*", out_tail:true)
   ## -----*----- 安全なパスワード入力 -----*----- ##
   raise ArgumentError unless prompt.length == is_echo.length
   ret = Array.new(prompt.length)
@@ -21,7 +22,11 @@ def getpass(prompt:["id", "password"], is_echo:[true, false], sub_char:"*")
           c = STDIN.raw(&:getc)
           break if c == "\r"
           ret[i] += c
-          putc sub_char
+          if out_tail
+            putc c
+          else
+            putc sub_char
+          end
         end
       }
       print "\n"
