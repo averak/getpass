@@ -24,12 +24,12 @@ getpass(is_echo:[true, true]) # => [ID, PW]
 # password：testpassword
 
 getpass(prompt:["username", "password"]) # => [ID, PW]
-# username：testID
-# password：testpassword
+# username：******
+# password：***********d
 
 getpass(sub_char:"+") # => [ID, PW]
 # id：testID
-# password：++++++++++++
+# password：+++++++++++d
 ```
 
 ## Installation
