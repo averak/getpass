@@ -6,11 +6,12 @@ A utility that securely receives password on STDIN without echo.
 
 ## Usage
 ### Description of Arguments
-name     | Description
----------|----------------------------------------------------------------------------------
-prompt   | Prompt to display. Default value is ["id", "password"].
-is_echo  | Whether to display the entered string. Default value is [true, false].
-sub_char | Character to be displayed instead of the entered character. Default value is "*".
+name         | Description
+-------------|----------------------------------------------------------------------------------
+prompt       | Prompt to display. Default value is ["id", "password"].
+is_echo      | Whether to display the entered string. Default value is [true, false].
+display_tail | Whether to display the tail of entered string. Default value is true.
+sub_char     | Character to be displayed instead of the entered character. Default value is "*".
 
 ### Simple Example
 ```ruby
