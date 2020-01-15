@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 require 'io/console'
 
-def getpass(prompt:["id", "password"], is_echo:[true, false],
+def getpass(prompt:["id", "password"], is_echo:[false, false],
             display_tail: true, sub_char:"*")
   ## -----*----- 安全なパスワード入力 -----*----- ##
   raise ArgumentError unless prompt.length == is_echo.length
