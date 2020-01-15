@@ -33,8 +33,6 @@ def getpass(prompt:["id", "password"], is_echo:[true, false],
           else
             putc sub_char
           end
-          #ret[i] += c
-          #putc sub_char
         end
       }
       print "\n"
@@ -43,5 +41,3 @@ def getpass(prompt:["id", "password"], is_echo:[true, false],
 
   ret
 end
-
-p getpass
