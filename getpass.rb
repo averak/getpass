@@ -18,13 +18,18 @@ def getpass(prompt:["id", "password"], is_echo:[true, false],
     else
       # エコーバック無し
       STDIN.noecho {
+        i_backspace = 0
+
         loop do
           c = STDIN.raw(&:getc)
+          # 改行
           break if c == "\r"
+
           ret[i] += c
           if display_tail
-            sub_str = ret[i].chars.map {|c| c}
-            print "\e[#{ret[i].length}D#{ret[i]}\e[1C"
+            # 末尾のみ表示・その他はsub_charに置換
+            sub_str = sub_char * (ret[i].length-1) + ret[i][-1]
+            print "\e[#{ret[i].length}D#{sub_str}\e[1C"
           else
             putc sub_char
           end
@@ -39,4 +44,4 @@ def getpass(prompt:["id", "password"], is_echo:[true, false],
   ret
 end
 
-getpass
+p getpass
